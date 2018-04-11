@@ -55,8 +55,9 @@ public class RegisterController extends BaseController {
 			User user = userService.register(post);
 			sendEmail(user);
 
-			data = Data.success("恭喜您! 注册成功, 已经给您的邮箱发了验证码, 赶紧去完成邮箱绑定吧。", Data.NOOP);
-			data.addLink("login", "先去登陆尝尝鲜");
+			data = Data.success("恭喜您! 注册成功, 已经给您的邮箱发了验证码, 赶紧去邮箱点击链接绑定吧。" +
+					"本链接存在过期时间，如已过期请在修改资料里重新发送验证邮件", Data.NOOP);
+			data.addLink("login", "暂不认证，登陆本站");
 
 			ret = view(Views.REGISTER_RESULT);
 			

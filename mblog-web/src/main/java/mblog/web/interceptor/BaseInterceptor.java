@@ -60,6 +60,7 @@ public class BaseInterceptor extends HandlerInterceptorAdapter {
 			LogTool.info(profile.getUsername());
 			LogTool.info(profile.getName());
 			System.out.println(profile.getId());//用户ID
+
 		}
 		return true;
 	}
